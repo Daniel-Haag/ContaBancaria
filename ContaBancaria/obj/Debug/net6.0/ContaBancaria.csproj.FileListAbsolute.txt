@@ -1,0 +1,15 @@
+C:\Cursos\ContaBancaria\ContaBancaria\bin\Debug\net6.0\ContaBancaria.exe
+C:\Cursos\ContaBancaria\ContaBancaria\bin\Debug\net6.0\ContaBancaria.deps.json
+C:\Cursos\ContaBancaria\ContaBancaria\bin\Debug\net6.0\ContaBancaria.runtimeconfig.json
+C:\Cursos\ContaBancaria\ContaBancaria\bin\Debug\net6.0\ContaBancaria.dll
+C:\Cursos\ContaBancaria\ContaBancaria\bin\Debug\net6.0\ContaBancaria.pdb
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.csproj.AssemblyReference.cache
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.AssemblyInfoInputs.cache
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.AssemblyInfo.cs
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.csproj.CoreCompileInputs.cache
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.dll
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\refint\ContaBancaria.dll
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.pdb
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ContaBancaria.genruntimeconfig.cache
+C:\Cursos\ContaBancaria\ContaBancaria\obj\Debug\net6.0\ref\ContaBancaria.dll
