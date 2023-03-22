@@ -42,9 +42,7 @@ namespace ContaBancariaTeste
         [Ignore("Pendência de implementação")]
         public void testeSacarValorNegativo()
         {
-            bool resultado = conta.Sacar(-100);
-
-            Assert.IsFalse(resultado);
+            Assert.Throws<ArgumentOutOfRangeException>(delegate { conta.Sacar(-100); });
         }
 
         [Test]

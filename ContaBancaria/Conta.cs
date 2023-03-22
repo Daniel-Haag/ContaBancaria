@@ -31,7 +31,7 @@ namespace ContaBancaria
         {
             if (valor <= 0)
             {
-                return false;
+                throw new ArgumentOutOfRangeException();
             }
 
             if (saldo < valor)
