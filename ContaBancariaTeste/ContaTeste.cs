@@ -30,6 +30,17 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Ignore("Pendência de implementação")]
+        public void testeSacarValorNegativo()
+        {
+            Conta conta = new Conta("0009", 200);
+
+            bool resultado = conta.Sacar(-100);
+
+            Assert.IsFalse(resultado);
+        }
+
+        [Test]
         public void testeDepositar()
         {
             Conta conta = new Conta("0009", 0);
