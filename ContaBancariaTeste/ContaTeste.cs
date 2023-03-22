@@ -20,6 +20,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Saques")]
         public void testeSacar()
         {
             bool resultado = conta.Sacar(120);
@@ -28,6 +29,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Saques")]
         public void testeSacarSemSaldo()
         {
             bool resultado = conta.Sacar(250);
@@ -36,6 +38,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Saques")]
         [Ignore("Pendência de implementação")]
         public void testeSacarValorNegativo()
         {
@@ -45,6 +48,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Depositos")]
         public void testeDepositar()
         {
             Conta conta = new Conta("0009", 0);
@@ -60,6 +64,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Asserts")]
         public void testAssertStringEmpty()
         {
             string s = "";
@@ -68,6 +73,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Asserts")]
         public void testAssertGreater()
         {
             int a = 70;
@@ -77,6 +83,7 @@ namespace ContaBancariaTeste
         }
 
         [Test]
+        [Category("Asserts")]
         public void testAssertAreSame()
         {
             Conta c1 = new Conta("0001", 200);
