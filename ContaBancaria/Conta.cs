@@ -29,6 +29,11 @@ namespace ContaBancaria
 
         public bool Sacar(decimal valor)
         {
+            if (valor <= 0)
+            {
+                return false;
+            }
+
             if (saldo < valor)
             {
                 return false;
