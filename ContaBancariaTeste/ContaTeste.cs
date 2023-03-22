@@ -54,5 +54,31 @@ namespace ContaBancariaTeste
 
             Assert.IsTrue(resultado);
         }
+
+        [Test]
+        public void testAssertStringEmpty()
+        {
+            string s = "";
+
+            Assert.IsEmpty(s);
+        }
+
+        [Test]
+        public void testAssertGreater()
+        {
+            int a = 70;
+            int b = 50;
+
+            Assert.Greater(a, b);
+        }
+
+        [Test]
+        public void testAssertAreSame()
+        {
+            Conta c1 = new Conta("0001", 200);
+            Conta c2 = c1;
+
+            Assert.AreSame(c1, c2);
+        }
     }
 }
