@@ -4,16 +4,24 @@ namespace ContaBancariaTeste
 {
     public class Tests
     {
+        Conta conta;
+
         [SetUp]
         public void Setup()
         {
+            conta = new Conta("0009", 200);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            //Código executado após cada teste unitário
+            conta = null;
         }
 
         [Test]
         public void testeSacar()
         {
-            Conta conta = new Conta("0009", 200);
-
             bool resultado = conta.Sacar(120);
 
             Assert.IsTrue(resultado);
@@ -22,8 +30,6 @@ namespace ContaBancariaTeste
         [Test]
         public void testeSacarSemSaldo()
         {
-            Conta conta = new Conta("0009", 200);
-
             bool resultado = conta.Sacar(250);
 
             Assert.IsFalse(resultado);
@@ -33,8 +39,6 @@ namespace ContaBancariaTeste
         [Ignore("Pendência de implementação")]
         public void testeSacarValorNegativo()
         {
-            Conta conta = new Conta("0009", 200);
-
             bool resultado = conta.Sacar(-100);
 
             Assert.IsFalse(resultado);
