@@ -28,5 +28,20 @@ namespace ContaBancariaTeste
 
             Assert.IsFalse(resultado);
         }
+
+        [Test]
+        public void testeDepositar()
+        {
+            Conta conta = new Conta("0009", 0);
+
+            bool resultado = false;
+
+            conta.Depositar(250);
+
+            if (conta.GetSaldo() > 0)
+                resultado = true;
+
+            Assert.IsTrue(resultado);
+        }
     }
 }
