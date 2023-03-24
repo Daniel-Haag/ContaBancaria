@@ -21,11 +21,13 @@ namespace ContaBancariaTeste
 
         [Test]
         [Category("Saques")]
-        public void testeSacar()
+        [TestCase(120, true)]
+        [TestCase(-120, false)]
+        public void testeSacar(decimal valor, bool valorEsperado)
         {
-            bool resultado = conta.Sacar(120);
+            bool resultado = conta.Sacar(valor);
 
-            Assert.IsTrue(resultado);
+            Assert.IsTrue(resultado == valorEsperado);
         }
 
         [Test]
@@ -47,13 +49,18 @@ namespace ContaBancariaTeste
 
         [Test]
         [Category("Depositos")]
-        public void testeDepositar()
+        [TestCase(100)]
+        [TestCase(200)]
+        [TestCase(300)]
+        [TestCase(400)]
+        [TestCase(500)]
+        public void testeDepositar(decimal valor)
         {
             Conta conta = new Conta("0009", 0);
 
             bool resultado = false;
 
-            conta.Depositar(250);
+            conta.Depositar(valor);
 
             if (conta.GetSaldo() > 0)
                 resultado = true;
