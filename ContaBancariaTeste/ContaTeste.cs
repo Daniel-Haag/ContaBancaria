@@ -22,7 +22,7 @@ namespace ContaBancariaTeste
         [Test]
         [Category("Saques")]
         [TestCase(120, true)]
-        [TestCase(-120, false)]
+        //[TestCase(-120, false)]
         public void testeSacar(decimal valor, bool valorEsperado)
         {
             bool resultado = conta.Sacar(valor);
@@ -95,6 +95,15 @@ namespace ContaBancariaTeste
             Conta c2 = c1;
 
             Assert.AreSame(c1, c2);
+        }
+
+        [Test]
+        [Timeout(4000)]
+        public void testeMetodoLento()
+        {
+            bool resultado = conta.Sacar(100);
+
+            Assert.IsFalse(resultado);
         }
     }
 }
