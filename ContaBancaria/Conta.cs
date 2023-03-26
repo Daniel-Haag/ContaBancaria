@@ -8,23 +8,26 @@ namespace ContaBancaria
 {
     public class Conta
     {
-        private string cpf;
-        private decimal saldo;
+        private string _cpf;
+        private decimal _saldo;
+        private IValidadorCredito? _validadorCredito;
 
-        public Conta(string cpf, decimal saldo)
+
+        public Conta(string cpf, decimal saldo, IValidadorCredito validadorCredito)
         {
-            this.cpf = cpf;
-            this.saldo = saldo;
+            this._cpf = cpf;
+            this._saldo = saldo;
+            this._validadorCredito = validadorCredito;
         }
 
         public decimal GetSaldo()
         {
-            return saldo;
+            return _saldo;
         }
 
         public void Depositar(decimal valor)
         {
-            this.saldo += valor;
+            this._saldo += valor;
         }
 
         public bool Sacar(decimal valor)
@@ -34,13 +37,25 @@ namespace ContaBancaria
                 throw new ArgumentOutOfRangeException();
             }
 
-            if (saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
 
-            this.saldo -= valor;
+            this._saldo -= valor;
             return true;
+        }
+
+        public bool SolicitarEmprestimo(decimal valor)
+        {
+            bool resultado = _validadorCredito.ValidarCredito(this._cpf, valor);
+
+            if (resultado)
+            {
+                this._saldo += valor;
+            }
+
+            return resultado;
         }
     }
 }

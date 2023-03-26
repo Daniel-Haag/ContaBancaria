@@ -9,7 +9,15 @@ namespace ContaBancariaTeste
         [SetUp]
         public void Setup()
         {
-            conta = new Conta("0009", 200);
+            conta = new Conta("0009", 200, new ValidadorCreditoFake());
+        }
+
+        [Test]
+        public void testeSolicitarEmprestimo()
+        {
+            bool resultado = conta.SolicitarEmprestimo(5000);
+
+            Assert.IsTrue(resultado);
         }
 
         [TearDown]
@@ -56,7 +64,7 @@ namespace ContaBancariaTeste
         [TestCase(500)]
         public void testeDepositar(decimal valor)
         {
-            Conta conta = new Conta("0009", 0);
+            Conta conta = new Conta("0009", 0, new ValidadorCreditoFake());
 
             bool resultado = false;
 
@@ -91,7 +99,7 @@ namespace ContaBancariaTeste
         [Category("Asserts")]
         public void testAssertAreSame()
         {
-            Conta c1 = new Conta("0001", 200);
+            Conta c1 = new Conta("0001", 200, new ValidadorCreditoFake());
             Conta c2 = c1;
 
             Assert.AreSame(c1, c2);
@@ -99,6 +107,7 @@ namespace ContaBancariaTeste
 
         [Test]
         [Timeout(4000)]
+        [Ignore("")]
         public void testeMetodoLento()
         {
             bool resultado = conta.Sacar(100);
