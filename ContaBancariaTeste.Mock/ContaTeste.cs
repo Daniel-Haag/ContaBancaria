@@ -14,7 +14,7 @@ namespace ContaBancariaTeste.Mock
         public void testeSolicitarEmprestimoMoq()
         {
             var mock = new Mock<IValidadorCredito>();
-            mock.Setup(x => x.ValidarCredito("0001", 5000)).Returns(true);
+            mock.Setup(x => x.ValidarCredito(It.IsAny<string>(), It.IsAny<decimal>())).Returns(true);
 
             var conta = new Conta("0001", 100, mock.Object);
 
